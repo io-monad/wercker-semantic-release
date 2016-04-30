@@ -12,7 +12,12 @@ if [ -z "$NPM_TOKEN" ]; then
 fi
 
 LOG_FILE="/tmp/semantic-release.log"
+
+GH_TOKEN="$GH_TOKEN" \
+NPM_TOKEN="$NPM_TOKEN" \
+CI=true \
 npm run semantic-release | tee $LOG_FILE
+
 if [ ${PIPESTATUS[0]} -eq 0 ]; then
   success "semantic-release succeeded"
 else
