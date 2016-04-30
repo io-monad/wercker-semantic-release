@@ -13,7 +13,7 @@ fi
 
 LOG_FILE="/tmp/semantic-release.log"
 npm run semantic-release | tee $LOG_FILE
-if [ $? -eq 0 ]; then
+if [ ${PIPESTATUS[0]} -eq 0 ]; then
   success "semantic-release succeeded"
 else
   if [ "$IGNORE_NO_RELEASE" = "false" ]; then
