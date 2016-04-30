@@ -1,0 +1,16 @@
+name: semantic-release
+version: 1.0.0
+description: Run semantic-release for npm module
+keywords:
+  - node.js
+  - npm
+  - semantic-release
+  - versioning
+  - deploy
+properties:
+  github_token:
+    type: string
+  npm_token:
+    type: string
+  ignore_no_release:
+    type: string
