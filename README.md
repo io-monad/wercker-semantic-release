@@ -2,7 +2,7 @@
 
 A [wercker](http://wercker.com/) step to run [semantic-release](https://github.com/semantic-release/semantic-release)
 
-This step assumes that your `package.json` has `semantic-release` script, which means `npm run semantic-release` on your project root is available. This is generally configured by [semantic-release-cli](https://github.com/semantic-release/semantic-release).
+This step assumes that your `package.json` has `semantic-release` script, which means `npm run semantic-release` on your project root is available. This is generally configured by [semantic-release-cli](https://github.com/semantic-release/cli).
 
 ## Usage
 
@@ -15,7 +15,7 @@ steps:
       npm_token: $NPM_TOKEN
 ```
 
-`GH_TOKEN` and `NPM_TOKEN` are issued by [semantic-release-cli](https://github.com/semantic-release/semantic-release) and should be set as [protected environment variables](http://devcenter.wercker.com/docs/environment-variables/protected-variables.html).
+`GH_TOKEN` and `NPM_TOKEN` are issued by [semantic-release-cli](https://github.com/semantic-release/cli) and should be set as [protected environment variables](http://devcenter.wercker.com/docs/environment-variables/protected-variables.html).
 
 ## Properties
 
