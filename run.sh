@@ -2,6 +2,7 @@
 
 GH_TOKEN=${WERCKER_SEMANTIC_RELEASE_GITHUB_TOKEN:-$GH_TOKEN}
 NPM_TOKEN=${WERCKER_SEMANTIC_RELEASE_NPM_TOKEN:-$NPM_TOKEN}
+BRANCH=${WERCKER_SEMANTIC_RELEASE_BRANCH}
 IGNORE_NO_RELEASE=${WERCKER_SEMANTIC_RELEASE_IGNORE_NO_RELEASE}
 
 if [ -z "$GH_TOKEN" ]; then
@@ -9,6 +10,10 @@ if [ -z "$GH_TOKEN" ]; then
 fi
 if [ -z "$NPM_TOKEN" ]; then
   fail "Please set npm_token property or \$NPM_TOKEN environment variable"
+fi
+if [ -n "$BRANCH" -a "$WERCKER_GIT_BRANCH" != "$BRANCH" ]; then
+  info "Skipped (the git branch is not \"$BRANCH\")"
+  exit 0
 fi
 
 LOG_FILE="/tmp/semantic-release.log"
